@@ -6,7 +6,7 @@ const arr3 = ['abc','efg','hij','klm']
 //console.log(arr1);
 
 
-// const arr4 = arr1.concat(arr2)
+// const arr4 = arr1.concat(arr2)       //this method combine only one array to another 
 // console.log(arr4);
 
 

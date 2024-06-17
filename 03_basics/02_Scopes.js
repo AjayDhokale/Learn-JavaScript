@@ -13,7 +13,7 @@ if (true) {
 // console.log(c);
 
 
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//++++++++++++++++++++++++++++++++++++++++ Method 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 function one(){
@@ -27,7 +27,7 @@ function one(){
 }
 //one()
 
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++ Method 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 if (true) {
@@ -40,9 +40,40 @@ if (true) {
         if (lname === "Dhokale") {
             const marks = 100
             
-            console.log(uname + lname + "Marks :" + marks);
+            //console.log(uname +" " + lname  +" "  + "Marks :" + marks);
             
         }
     }
-    console.log("hello");
+   // console.log("hello");
 }
+
+//----------------------------------------- Method 3 ---------------------------------------
+
+
+if (true) {
+    const username = "hitesh"
+    if (username === "hitesh") {
+        const website = " youtube"
+        // console.log(username + website);
+    }
+    // console.log(website);
+}
+
+// console.log(username);
+
+//----------------------------------------- Method 4 ---------------------------------------
+
+
+function addOne(num1){
+    return num1 + 1
+}
+
+console.log(addOne(5));
+
+//----------------------------------------- Method 5 ---------------------------------------
+
+const addTwo = function(num) {
+    return num + 2
+}
+
+console.log(addTwo(5));

@@ -16,7 +16,7 @@ const userEmail = []
 
 
 
-// const newArr = []
+ const newArr = []
 
 // if (newArr.length == 0){
 //     console.log("array is Empty");
@@ -28,7 +28,7 @@ const userEmail = []
 //----------------------------------------- Method 2 ---------------------------------------
 
 
-// const newobj = {user : "ajay"}
+const newobj = {user : "ajay"}
 
 // if (Object.keys(newobj).length == 0) {
 //     console.log("Object is Empty");

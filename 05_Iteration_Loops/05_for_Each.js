@@ -1,5 +1,6 @@
 // For Each
 
+//----------------------------------------- Method 1 ---------------------------------------
 
 const coding = ["js","java","cpp","ruby","python"]
 
@@ -23,6 +24,7 @@ coding.forEach( (item,index, arr ) => {
     //console.log(item,index,arr);
 } )
 
+//----------------------------------------- Method 2 ---------------------------------------
 
 const arr1 = [
     {

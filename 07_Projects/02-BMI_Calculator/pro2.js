@@ -16,3 +16,22 @@ form.addEventListener('click', function(e){
        result.innerHTML = `<span>${bmi}<span>`
     }
 })
+
+const para1 = document.querySelectorAll('p:nth-child(1)')
+const para2 = document.querySelectorAll('p:nth-child(2)')
+const para3 = document.querySelectorAll('p:nth-child(3)')
+
+if (result < 18.6 ) {
+    para1.style.visibility='visible'
+    para2.style.visibility='hidden'
+    para3.style.visibility='hidden'
+}else if(result > 18.6 || result < 24.9){
+    para1.style.visibility='hidden'
+    para2.style.visibility='visible'
+    para3.style.visibility='hidden'
+}else if(result > 24.9){
+    para1.style.visibility='hidden'
+    para2.style.visibility='hidden'
+    para3.style.visibility='visible'
+}
+

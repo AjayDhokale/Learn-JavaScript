@@ -18,12 +18,12 @@ html {
     display: inline-block;
   }
   
-  #grey {
-    background: grey;
+  #red {
+    background: red;
   }
   
-  #white {
-    background: white;
+  #orange {
+    background: orange;
   }
   #blue {
     background: blue;

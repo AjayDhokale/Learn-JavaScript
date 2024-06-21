@@ -11,13 +11,55 @@
     </ul>
 </body>
 <script>
-    function addLanguage()
+
+//----------------------------------------- Method 1 ---------------------------------------
+
+
+    function addLanguage(langName)
     {
-        
+        const li = document.createElement("li")
+        li.innerHTML = `${langName}`
+        document.querySelector(".language").appendChild(li)
     }
+    addLanguage("Typescript")
+
+//----------------------------------------- Method 2 ---------------------------------------
+
+
+    function addOptimalLanguage(langName) {
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(li)
+    }
+    addOptimalLanguage("Python")
+    addOptimalLanguage("Java")
+
+//----------------------------------------- Method 3 ---------------------------------------
+
+
+    // Edit
+    // const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "Mojo"                                    //Method  1
+
+//----------------------------------------- Method 4 ---------------------------------------
+
+    const secondLang = document.querySelector("li:nth-child(2)")
+    const newli = document.createElement("li")                          //Method  2
+    newli.textContent = "Mojo"
+    secondLang.replaceWith(newli)
+
+
+//----------------------------------------- Method 5 ---------------------------------------
+
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = "<li>Swift</li>"                              //Method  3
+
+
+///Remove
+
+const lastElement = document.querySelector("li:last-child")
+lastElement.remove()
+
 
 </script>
-
-
-
 </html>

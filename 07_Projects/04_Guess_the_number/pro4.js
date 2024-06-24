@@ -28,7 +28,7 @@ if (playGame) {
 
 
 
-function validateGuess(guess){
+function validateGuess(guess) {
     if(isNaN(guess)){
         alert("Please enter the valid number...");
     }else if(guess < 1 && guess > 100){
@@ -47,7 +47,7 @@ function validateGuess(guess){
 }
 
 
-function checkGuess(guess){
+function checkGuess(guess) {
     if (guess === randomNumber) {
         displayMessage(`you guessed it right`);
         endGame();
@@ -59,7 +59,7 @@ function checkGuess(guess){
 }
 
 
-function displayGuess(guess){
+function displayGuess(guess) {
     userInput.value = "";
     guessedValues.innerHTML += `${guess},`;
     guessNum++;
@@ -71,7 +71,7 @@ function displayMessage(message){
 }
 
 
-function endGame(){
+function endGame() {
     userInput.innerHTML = '';
     userInput.setAttribute('disabled', '');
     p.classList.add('button');
@@ -81,7 +81,7 @@ function endGame(){
     startNewGame();
 }
 
-function startNewGame(){
+function startNewGame() {
     
     const newGameButton = document.getElementById('newGame');
     newGameButton.addEventListener('click',function(e){

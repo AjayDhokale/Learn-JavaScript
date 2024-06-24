@@ -104,7 +104,7 @@ let randomNumber = parseInt(Math.random()*100+1);
 
 const submit = document.querySelector('#subt');
 const userInput = document.querySelector('#guessField');
-const previousGuess = document.querySelector('.guesses');
+const guessedValues = document.querySelector('.guesses');
 const remaningGuess = document.querySelector('.lastResult');
 const message = document.querySelector('.msg');
 const restartGame = document.querySelector('.resultParas');
@@ -126,7 +126,7 @@ if (playGame) {
 }
 
 
-function validateGuess() {
+function validateGuess(guess) {
     if(isNaN(guess)) {
         alert(`Please Enter the Valid Number`);
     } else if(guess < 1 && guess > 100) {
@@ -145,18 +145,49 @@ function validateGuess() {
 
 }
 
-function checkGuess() {
+function checkGuess(guess) {
     if(guess === randomNumber) {
-
+        displayGuess(`You guessed it right....`)
+        endGame()
+    } else if(guess < randomNumber) {
+        displayGuess(`you guessed number is Tooo low`)
+    } else if( guess > randomNumber) {
+        displayGuess(`you guessed number is Tooo High`)
     }
 }
 
-function displayGuess() {}
+function displayGuess(guess) {
+    userInput.value = "";
+    guessedValues.innerHTML += `${guess}`;
+    remaningNum++;
+    remaningGuess.innerHTML = `${11 - remaningNum}`
+}
 
 function displayMessage(msg) {
     message.innerHTML = `<h3>${msg}</h3>`
 }
 
-function endGame() {}
+function endGame() {
+    userInput.innerHTML = "";
+    userInput.setAttribute('disabled','');
+    p.classList.add('button');
+    p.innerHTML = `<h3 id="newGame">Start New Game</h3>`;
+    restartGame.appendChild(p);
+    playGame = false;
+    startNewGame();
+}
 
-function startNewGame() {}
+function startNewGame() {
+    const newGame = document.querySelector('#newGame')
+    newGame.addEventListener('click', function(e) {
+    randomNumber = parseInt(Math.random()*100+1);
+    previousNum = [];
+    remaningNum = 1;
+    guessedValues.innerHTML = "";
+    remaningGuess.innerHTML = `${11 - remaningNum}`;
+    userInput.removeAttribute('disabled');
+    restartGame.removeChild(p);
+    playGame = true;
+
+    })
+}

@@ -100,6 +100,7 @@
 
 
 
+
 let randomNumber = parseInt(Math.random()*100+1);
 
 const submit = document.querySelector('#subt');
@@ -111,7 +112,7 @@ const restartGame = document.querySelector('.resultParas');
 
 const p = document.createElement('p');
 
-let previousNum = [];
+let guessNum = [];
 let remaningNum = 1;
 
 let playGame = true;
@@ -132,14 +133,15 @@ function validateGuess(guess) {
     } else if(guess < 1 && guess > 100) {
         alert(`Please Enter the Number between 1 to 100`)
     }else {
-        previousNum.push(guess);
-        if(guess === 11) {
+        guessNum.push(guess);
+        if(remaningNum === 11) {
             displayGuess(guess);
             displayMessage(`Game Over....The Random Number was ${randomNumber}`)
             endGame()
         } else {
-             checkGuess(guess)
-             displayGuess(guess)
+            displayGuess(guess)
+            checkGuess(guess)
+           
         }
     }
 
@@ -147,18 +149,18 @@ function validateGuess(guess) {
 
 function checkGuess(guess) {
     if(guess === randomNumber) {
-        displayGuess(`You guessed it right....`)
+        displayMessage(`You guessed it right....`)
         endGame()
     } else if(guess < randomNumber) {
-        displayGuess(`you guessed number is Tooo low`)
+        displayMessage(`you guessed number is Tooo low`)
     } else if( guess > randomNumber) {
-        displayGuess(`you guessed number is Tooo High`)
+        displayMessage(`you guessed number is Tooo High`)
     }
 }
 
 function displayGuess(guess) {
     userInput.value = "";
-    guessedValues.innerHTML += `${guess}`;
+    guessedValues.innerHTML += `${guess},`;
     remaningNum++;
     remaningGuess.innerHTML = `${11 - remaningNum}`
 }
@@ -181,7 +183,7 @@ function startNewGame() {
     const newGame = document.querySelector('#newGame')
     newGame.addEventListener('click', function(e) {
     randomNumber = parseInt(Math.random()*100+1);
-    previousNum = [];
+    guessNum = [];
     remaningNum = 1;
     guessedValues.innerHTML = "";
     remaningGuess.innerHTML = `${11 - remaningNum}`;

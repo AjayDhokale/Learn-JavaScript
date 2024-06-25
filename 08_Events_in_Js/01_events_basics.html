@@ -55,21 +55,27 @@
     //     e.preventDefault()
     //     e.stopPropagation()
     //     console.log("google clicked");
-    // }, false)
 
 
+    // }, false)                                                 // it is default false and it called event Bubbling
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log("google clicked");
 
 
+    // }, true)                                                 //  it called event capturing
+
+// document.getElementById('google').addEventListener('click',function(e){}, false)  //it called event Bubbling
+// document.getElementById('google').addEventListener('click',function(e){}, true)  //  it called event capturing
 
     document.querySelector('.images').addEventListener('click', function (e) {
        e.preventDefault()
        if (e.target.tagName === 'IMG') {
         let removeit = e.target.parentNode
-        removeit.remove()
-        
-        
+        removeit.remove() 
        }
-
     })
 
 

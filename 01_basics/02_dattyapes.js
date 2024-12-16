@@ -1,3 +1,21 @@
+//datatypes in js
+
+//1. Primitive
+    // number
+    // null
+    // string
+    // symbol
+    // boolean
+    // bigInt
+    // undefined
+
+//2. Non-Primitive
+    // Array
+    // Object
+
+
+
+
 "use strict"; // treat all JS code as newer version of JS
 
 // alert( 3 + 3) // we are using nodejs, not browser
